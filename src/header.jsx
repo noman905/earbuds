@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion"; // Fixed import
+import { motion } from "framer-motion";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,18 +16,10 @@ export const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex space-x-6">
-        <NavLink to="/" className="text-gray-700 hover:text-black font-medium">
-          Product
-        </NavLink>
-        <NavLink to="/Features" className="text-gray-700 hover:text-black font-medium">
-          Features
-        </NavLink>
-        <NavLink to="/Reviews" className="text-gray-700 hover:text-black font-medium">
-          Reviews
-        </NavLink>
-        <NavLink to="/About" className="text-gray-700 hover:text-black font-medium">
-          About us
-        </NavLink>
+        <NavLink to="/" className="text-gray-700 hover:text-black font-medium">Product</NavLink>
+        <NavLink to="/Features" className="text-gray-700 hover:text-black font-medium">Features</NavLink>
+        <NavLink to="/Reviews" className="text-gray-700 hover:text-black font-medium">Reviews</NavLink>
+        <NavLink to="/About" className="text-gray-700 hover:text-black font-medium">About us</NavLink>
       </div>
 
       {/* Icons */}
@@ -35,39 +27,36 @@ export const Navbar = () => {
         <img src="./special1.webp" className="w-8 h-8 rounded-full" alt="Profile" />
       </div>
 
-      {/* Mobile Menu Button */}
-      <button className="md:hidden z-50" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+      {/* Mobile Menu Button (Larger Size) */}
+      <button className="md:hidden z-50 p-2" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <FiX size={40} /> : <FiMenu size={40} />} {/* Increased icon size */}
       </button>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (Larger) */}
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, x: "100%" }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "100%" }}
           transition={{ duration: 0.3 }}
-          className="fixed top-0 right-0 w-3/4 h-full bg-white shadow-lg flex flex-col items-start p-6 space-y-6 md:hidden z-40"
+          className="fixed top-0 right-0 w-2/3 h-full bg-white shadow-lg flex flex-col items-start p-8 space-y-6 md:hidden z-40" 
         >
-          <button className="self-end text-gray-700" onClick={handleClose}>
-            <FiX size={24} />
-          </button>
-          <NavLink to="/" className="text-gray-700 hover:text-black font-medium" onClick={handleClose}>
+          <NavLink to="/" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
             Product
           </NavLink>
-          <NavLink to="/Features" className="text-gray-700 hover:text-black font-medium" onClick={handleClose}>
+          <NavLink to="/Features" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
             Features
           </NavLink>
-          <NavLink to="/Reviews" className="text-gray-700 hover:text-black font-medium" onClick={handleClose}>
+          <NavLink to="/Reviews" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
             Reviews
           </NavLink>
-          <NavLink to="/About" className="text-gray-700 hover:text-black font-medium" onClick={handleClose}>
+          <NavLink to="/About" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
             About us
           </NavLink>
 
           {/* Profile Icon in Mobile Menu */}
-          <div className="flex space-x-4 mt-4">
-            <img src="./special1.webp" className="w-8 h-8 rounded-full" alt="Profile" />
+          <div className="flex space-x-4 mt-6">
+            <img src="./special1.webp" className="w-10 h-10 rounded-full" alt="Profile" /> {/* Slightly larger */}
           </div>
         </motion.div>
       )}
