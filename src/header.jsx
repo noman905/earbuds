@@ -27,36 +27,49 @@ export const Navbar = () => {
         <img src="./special1.webp" className="w-8 h-8 rounded-full" alt="Profile" />
       </div>
 
-      {/* Mobile Menu Button (Larger Size) */}
-      <button className="md:hidden z-50 p-2" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <FiX size={40} /> : <FiMenu size={40} />} {/* Increased icon size */}
+      {/* Mobile Menu Button */}
+      <button className="md:hidden p-2 z-50" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <FiX size={40} /> : <FiMenu size={40} />}
       </button>
 
-      {/* Mobile Menu (Larger) */}
+      {/* Mobile Menu */}
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, x: "100%" }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "100%" }}
           transition={{ duration: 0.3 }}
-          className="fixed top-0 right-0 w-2/3 h-full bg-white shadow-lg flex flex-col items-start p-8 space-y-6 md:hidden z-40" 
+          className="fixed top-0 right-0 w-2/3 h-full bg-white shadow-lg flex flex-col items-start p-8 space-y-6 md:hidden z-40"
         >
-          <NavLink to="/" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
-            Product
-          </NavLink>
-          <NavLink to="/Features" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
-            Features
-          </NavLink>
-          <NavLink to="/Reviews" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
-            Reviews
-          </NavLink>
-          <NavLink to="/About" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
-            About us
-          </NavLink>
+         
+
+          {/* Menu Items (Wrapped in a <ul>) */}
+          <ul className="space-y-4 mt-20">
+            <li>
+              <NavLink to="/" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
+                Product
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/Features" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
+                Features
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/Reviews" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
+                Reviews
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/About" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
+                About us
+              </NavLink>
+            </li>
+          </ul>
 
           {/* Profile Icon in Mobile Menu */}
           <div className="flex space-x-4 mt-6">
-            <img src="./special1.webp" className="w-10 h-10 rounded-full" alt="Profile" /> {/* Slightly larger */}
+            <img src="./special1.webp" className="w-10 h-10 rounded-full" alt="Profile" />
           </div>
         </motion.div>
       )}
