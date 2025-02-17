@@ -29,24 +29,17 @@ export const About = () => {
         </div>
 
         {/* Text Section */}
-        <div className="flex flex-col gap-6 p-14 w-full md:w-[50vw] lg:w-[40vw]">
+        <div className="flex flex-col gap-6 p-3 md:p-14 w-full md:w-[50vw] lg:w-[40vw]">
         <h1 className="text-3xl xl:text-4xl  text-center md:text-left  m-auto font-extrabold uppercase">
             About US
           </h1>
           <p className="text-justify text-base sm:text-lg font-normal font-serif">
           
-              At Delice, we make enjoying great food easy by delivering your favorite meals straight to your door.
-         
-             We partner with top local
-            restaurants to offer a wide variety of options, ensuring you never{" "}
-          run out of choices.Fast,
-            reliable, and delicious — that's our promise to you. Thank you for
-            choosing us!{" "}
-          
-              With a user-friendly app and reliable delivery team,
-            
-            we’re committed to bringing you an effortless and enjoyable food
-            experience, every time. We believe in convenience.
+          At Sonjictive, we believe great sound should be an experience, not just a feature. Our premium earbuds are designed to bring you crystal-clear audio, powerful bass, and unparalleled comfort — all packed into a sleek, compact design.
+
+Whether you're working out, commuting, or simply relaxing, our earbuds provide the perfect sound for every moment. With advanced noise cancellation and a long-lasting battery, you’ll stay immersed in your music, podcasts, or calls without interruption.
+
+Fast, reliable, and stylish — that’s what you can expect from Sonjictive earbuds. Thank you for choosing us to elevate your listening experience.
           </p>
         </div>
       </motion.section>
