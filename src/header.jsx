@@ -16,7 +16,7 @@ export const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex space-x-6">
-        <NavLink to="/" className="text-gray-700 hover:text-black font-medium">Product</NavLink>
+        <NavLink to="/" className="text-gray-700 hover:text-black font-medium">Home</NavLink>
         <NavLink to="/Features" className="text-gray-700 hover:text-black font-medium">Features</NavLink>
         <NavLink to="/Reviews" className="text-gray-700 hover:text-black font-medium">Reviews</NavLink>
         <NavLink to="/About" className="text-gray-700 hover:text-black font-medium">About us</NavLink>
@@ -47,7 +47,7 @@ export const Navbar = () => {
           <ul className="space-y-4 mt-20">
             <li>
               <NavLink to="/" className="text-gray-700 hover:text-black font-medium text-lg" onClick={handleClose}>
-                Product
+                Home
               </NavLink>
             </li>
             <li>
